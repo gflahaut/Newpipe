@@ -1,0 +1,11 @@
+.idea
+.sass-cache
+_site
+docker-compose.yml
+.bundle/
+.vagrant/
+vendor/
+*.log
+
+.jekyll-cache/
+*.swp

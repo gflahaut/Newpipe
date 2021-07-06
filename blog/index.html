@@ -1,0 +1,84 @@
+---
+title: Blog
+layout: blog
+description: Welcome to NewPipe!
+short: All posts
+---
+{% for post in paginator.posts %}
+
+<div class="border-box" data-href="{{site.url }}{{ post.url }}">
+    <h4><a href="{{ BASE_PATH }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+    <p><span>{{ post.date | date_to_string }}, by {{ post.author }}</span></p><br>
+    {% if post.image %}
+    <div class="row">
+        <a href="{{ BASE_PATH }}{{ post.url }}">
+            <div class="col-md-3 col-img">
+                <img src="/img/{{ site.data.images[post.image].url }}" class="img-responsive postImg" alt="{% if site.data.images[post.image].name %}{{ site.data.images[post.image].name }}{% else %}post image{% endif %}" />
+            </div>
+        </a>
+        <div class="col-md-9">
+            {% if post.excerpt_separator %}
+                {{ post.excerpt }}
+            {% else %}
+                {%- assign exc = post.content | normalize_whitespace | split: '</p>' -%}
+                {%- for excs in exc -%}
+                {%- if forloop.index < 3 -%}{{ excs | append : '</p>'}}{%- endif -%}
+                {%- endfor -%}
+            {% endif %}
+            <p><a href="{{ post.url }}">Read more...</a></p>
+            <p class="categories">
+                {% for category in post.categories %}
+                <a href="{{ site.baseurl }}/blog/{{ category | slugize }}"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ category }}</a>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    {% else %}
+        {% if post.excerpt_separator %}
+            {{ post.excerpt }}
+        {% else %}
+            {{ post.content | truncatewords:100 }}
+        {% endif %}
+        <p><a href="{{ post.url }}">Read more...</a></p>
+
+        <p class="categories">
+            {% for category in post.categories %}
+            <a href="{{ site.baseurl }}/blog/{{ category | slugize }}"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ category }}</a>
+            {% unless forloop.last %}&nbsp;|&nbsp;{% endunless %}
+            {% endfor %}
+        </p>
+
+    {% endif %}
+
+</div>
+{% endfor %}
+
+<div class="clearfix"></div>
+
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Page navigation" class="pagination-container text-center border-box">
+    <ul class="pagination">
+        {% if paginator.previous_page %}
+        <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        {% else %}
+        <li><a aria-label="Previous" class="disabled"><span aria-hidden="true">&laquo;</span></a></li>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <li><a class="active disabled">{{ page }}</a></li>
+        {% elsif page == 1 %}
+        <li><a href="{{ '/blog/' | relative_url }}">{{ page }}</a></li>
+        {% else %}
+        <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"  aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        {% else %}
+        <li><a class="disabled"><span aria-hidden="true">&raquo;</span></a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}

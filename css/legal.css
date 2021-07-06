@@ -1,0 +1,21 @@
+#content-container h3 {
+    margin: 40px 0;
+}
+
+#content-container a,
+#content-container a:hover,
+#content-container a:focus {
+    color: #CD201F;
+}
+
+@media (min-width: 767px) {
+    #content-container {
+        margin-top: 78px;
+        padding-bottom: 65px;
+        min-height: calc(100vh - 78px - 208px);
+    }
+}
+
+body {
+    background: #e2dee0;
+}

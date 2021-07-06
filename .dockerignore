@@ -1,0 +1,12 @@
+#.gitignore
+LICENSE.md
+licenses/
+README.md
+.bundle/
+Dockerfile*
+docker-compose.yml*
+*.log
+*cache/
+.vagrant/
+vendor/
+*.swp

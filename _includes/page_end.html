@@ -1,0 +1,22 @@
+{{
+# Closes page and handles scripts for several sub pages
+# Following parameters are allowed:
+# page        Closes the optional <div id="page"> tag. Default: False
+# extraScript Additional scripts from the /js/ directory to append to the site
+}}
+
+    {% if include.page == "False" %}{% else %}</div> <!-- page -->{% endif %}
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ site.baseurl }}/bootstrap/js/bootstrap.min.js"></script>
+
+    {% if site.url contains "blog/" %}
+    <!-- Search optimizations -->
+    <script src="{{ site.baseurl }}/js/page_end.js"></script>
+    {% endif %}
+
+    {%- for script in include.extraScript %}
+    <script src="{{ site.baseurl }}/js/{{ script }}" ></script>
+    {% endfor -%}
+</body>
+</html>

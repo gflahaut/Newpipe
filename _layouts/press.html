@@ -1,0 +1,95 @@
+---
+# There are three different pages layouts for press pages implemented;
+# default: the default layout fills the full width of the container
+# small: the small layout is one-twelfth smaller than the default one.
+# media: the media layout adds support for media view pop-ups
+# To set your page type different than "default",
+# set type: small or type: media in the YAML header of the page.
+---
+
+{%- assign tit = page.title | append: ": Press kit - NewPipe. a free YouTube client" -%}
+{% include head.html
+           title    = tit
+           extraCSS = "press.css" %}
+
+{%- assign blink=site.baseurl | append: "press/" -%}
+{% include nav.html brand="Press" active="press" %}
+
+<div class="site-content height-full-parent">
+    <div class="container height-full-parent height-full">
+        <div class="row is-flex height-full-child">
+
+            <div class="col-xs-12 col-sm-8 col-sm-push-4
+            {% if page.type == 'small' -%}
+            col-md-8
+            {%- else -%}
+            col-md-9
+            {% endif %}
+            col-md-push-3 border-right" id="content-container">
+                <div class="extra-space"></div>
+
+                <!-- content -->
+                {{ content }} <!-- content -->
+
+            </div>
+
+            <!-- sidebar -->
+            <div class="col-xs-12 col-sm-pull-8 col-sm-4 col-md-3
+            {% if page.type == 'small' -%}
+            col-md-pull-8
+            {%- else -%}
+            col-md-pull-9
+            {%- endif %}
+            sidebar" id="sidebar" >
+                <div class="extra-space"></div>
+                <div class="list-group">
+                    <h3 class="list-group-item active red">Press Kit</h3>
+                    <a href="{{ site.baseurl }}/press/" class="list-group-item{% if page.url == '/press/' %} red{% endif %}"><span class="icon"><i class="fa fa-caret-right" aria-hidden="true"></i></span>Factsheet</a>
+                    <span class="list-group-item active"><span class="icon"></span>Media</span>
+                    <a href="{{ site.baseurl }}/press/logo/" class="list-group-item{% if page.url == '/press/logo/' %} red{% endif %}"><span class="icon"><i class="fa fa-caret-right" aria-hidden="true"></i></span>Logos & Icons</a>
+                    <a href="{{ site.baseurl }}/press/screenshots/" class="list-group-item{% if page.url == '/press/screenshots/' %} red{% endif %}"><span class="icon"><i class="fa fa-caret-right" aria-hidden="true"></i></span>Screenshots</a>
+                    <a href="{{ site.baseurl }}/press/various/" class="list-group-item{% if page.url == '/press/various/' %} red{% endif %}"><span class="icon"><i class="fa fa-caret-right" aria-hidden="true"></i></span>Additional Media</a>
+                    <a href="{{ site.baseurl }}/press/contact/" class="list-group-item active{% if page.url == '/press/contact/' %} red{% endif %}"><span class="icon"><i class="fa fa-caret-right" aria-hidden="true"></i></span>Contact</a>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="search-container">
+                    <form action="{{ site.baseurl }}/press/search/" method="get">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </span>
+                            <input type="text" class="form-control" id="search-box-sidebar"  name="s" placeholder="Search">
+                        </div><!-- input-group -->
+                    </form>
+                </div>
+
+                <div class="clearfix"></div>
+            </div> <!-- sidebar -->
+
+
+        </div>
+    </div>
+</div>
+
+{% if page.type == 'media' %}
+<!-- Modal -->
+<div id="mediaFileView" class="modal fade" role="dialog" data-dismiss="modal">
+    <img id="mediaFullScreen" src="" class="img-full-width screenshot-image" data-dismiss="modal"/>
+    <i class="fa fa-lg fa-times" aria-hidden="true" data-dismiss="modal" ></i>
+</div> <!-- Modal -->
+
+<script src="{{ site.baseurl }}/js/mediaview.js"></script>
+{% endif %}
+
+{% include footer.html buffer="True" %}
+
+</div> <!-- page -->
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ site.baseurl }}/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="{{ site.baseurl }}/js/press.js"></script>
+
+</body>
+</html>

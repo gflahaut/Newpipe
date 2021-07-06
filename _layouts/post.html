@@ -1,0 +1,65 @@
+---
+layout: blog
+post: True
+bodyID: "blog-post"
+---
+<article class="post single-article" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h3 class="post-title" itemprop="name headline">{{ page.title | escape }}</h3>
+        <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            {{ page.date | date: date_format }}
+            </time>
+            {% if page.author %}
+            by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+            &ndash; {% include reading-time.html %}
+        {% endif %}</p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {% if page.image %}
+        <div class="row">
+            <div class="col-md-3 col-img">
+                {% assign image = site.data.images[page.image] %}
+                <img src="/img/{{ image.url }}" class="img-responsive postImg" alt="{% if image.name %}{{ image.name }}{% else %}post image{% endif %}" />
+                {% if image.attributeAuthor %}
+                Picture: <a href="{{ image.origin }}">{{ image.author }}</a>
+                {% if image.license %} under {{ image.license }}{% endif %}
+                {% endif %}
+            </div>
+            <div class="col-md-9">
+                {{ content }}
+                <div class="categories">
+                    See also:
+                    {% for category in page.categories %}
+                    <a href="{{ site.baseurl}}/blog/{{ category | slugize }}"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ category }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        {{ content }}
+
+        <div class="categories">
+            See also:
+            {% for category in page.categories %}
+            <a href="{{ site.baseurl}}/blog/{{ category | slugize }}"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ category }}</a>
+            {% endfor %}
+        </div>
+
+        {% endif %}
+    </div> <!-- post content -->
+
+    <!-- Modal -->
+    <div id="mediaFileView" class="modal fade" role="dialog" data-dismiss="modal">
+        <img id="mediaFullScreen" src="" class="img-full-width screenshot-image" data-dismiss="modal" alt="full-size image" />
+        <i class="fa fa-lg fa-times" aria-hidden="true" data-dismiss="modal"></i>
+    </div> <!-- Modal -->
+
+    <script src="{{ site.baseurl }}/js/mediaview.js"></script>
+
+</article>
+
+{% include blog_comments.html %}

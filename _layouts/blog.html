@@ -1,0 +1,28 @@
+---
+layout: default
+extraCSS: [blog.css,comments.css]
+bodyID: "blog-post-list"
+navBrand: Blog
+# navBrandLink: blog/
+navActive: blog
+navSearch: True
+footerBuffer: "True"
+---
+
+<div class="post-collection">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-9 {%- if layout.post %} border-box single-post{% endif -%}">
+
+                {{ content }}
+
+            </div>
+
+            {% include blog_sidebar.html %}
+
+        </div>
+    </div>
+</div>
+
+<script src="{{ site.baseurl }}/js/blog.js" type="text/javascript"></script>
+

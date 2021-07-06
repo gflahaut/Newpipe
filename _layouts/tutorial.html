@@ -1,0 +1,48 @@
+---
+layout: default
+bodyID: faq
+bodyPage: "False"
+# navBrandLink: "FAQ/"
+navBrand: "FAQ"
+navActive: "FAQ"
+footerBuffer: "True"
+extraCSS: [tutorials.css, faq.css]
+extraJS: tutorial.js
+---
+
+{% if page.type == "tutorial" %}
+    {% assign backTitle="Tutorials" %}
+    {% assign backLink="/" %}
+{% else %}
+    {% assign backTitle="FAQ" %}
+    {% assign backLink="../" %}
+{% endif %}
+{% if page.backLink %}
+    {% assign backLink = page.backLink %}
+    {{page.backLink}}
+{% endif %}
+<div id="tutorial" class="site-content height-full-parent">
+    <div class="container container-double">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <a href="../" class="faq-back-link" data-toggle="tooltip" data-placement="bottom">
+                    <i class="fa fa-chevron-left"></i> Tutorials
+                </a>
+                <h3 class="tutorial-title">
+                     {{ page.title }}
+                </h3>
+                {{ content }}
+
+                {% include faq_improve_hint.html %}
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="mediaFileView" class="modal fade" role="dialog" data-dismiss="modal">
+            <img id="mediaFullScreen" src="" class="img-full-width screenshot-image" data-dismiss="modal"/>
+            <video id="videoFullScreen" class="img-full-width screenshot-image"  data-dismiss="modal"></video>
+            <i class="fa fa-lg fa-times" aria-hidden="true" data-dismiss="modal" ></i>
+        </div> <!-- Modal -->
+        <script src="{{ site.baseurl }}/js/mediaview.js"></script>
+    </div>
+</div>

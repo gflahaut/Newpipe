@@ -1,0 +1,53 @@
+---
+#   using the default or blog layout is difficult here,
+#   because page titles depend on multiple variables.
+metades: "Welcome to the blog of NewPipe, the lightweight YouTube experience for Android."
+---
+{%- assign Ptitle = page.title | append: ": " | append: site.title -%}
+{%- include head.html extraCSS = "blog.css" title = Ptitle bodyID="blog-category-post-list" -%}
+
+{%- assign blink=site.baseurl | append: "blog/" -%}
+{% include nav.html brand="Blog" brandLink=blink search=true active="blog" %}
+
+<div class="post-collection">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-9">
+
+                {%- if page.heading -%}
+                <h3 class="page-title">{{ page.heading }}</h3>
+                {%- else -%}
+                <h3 class="page-title">{{ page.title }}</h3>
+                {%- endif -%}
+
+                {% for post in site.categories[page.category] %}
+                <div class="category border-box"  data-href="{{site.url }}{{ post.url }}">
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        <h4 class="post-title">{{ post.title }}</h4>
+                        {% if post.subtitle %}
+                        <h5 class="post-subtitle">{{ post.subtitle }}</h5>
+                        {% endif %}
+                    </a>
+                    <p class="post-meta">
+                        Posted
+                        {% if post.author %}
+                        by {{ post.author }}
+                        {% endif %}
+                        on {{ post.date | date: "%B %-d, %Y" }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% include blog_sidebar.html %}
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{{ site.baseurl }}/js/blog.js"></script>
+
+{% include footer.html buffer="True" %}
+
+{% include page_end.html %}
+

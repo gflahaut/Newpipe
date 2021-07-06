@@ -1,0 +1,805 @@
+---
+
+---
+{%- include release_data.html -%}
+
+{%- include head.html
+            bodyID = "main-page"
+            extraCSS = "home.css"
+            page = "False" %}
+
+    <!-- parallax background for header -->
+    <div class="header-background"></div>
+
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+
+        <!-- navigation -->
+        <div id="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="parallax_reset();" >
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand visible-xs" href="#">NewPipe</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse navbar-right">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
+                                <li><a href="{{ site.baseurl }}/FAQ/">FAQ</a></li>
+                                <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+                                <li><a href="{{ site.baseurl }}/press/">Press</a></li>
+                                <li><a href="https://github.com/TeamNewPipe/NewPipe/">GitHub</a></li>
+                                <li><a href="https://teamnewpipe.github.io/documentation/">Docs <span class="badge">BETA</span></a></li>
+                                <li><a href="https://github.com/TeamNewPipe/NewPipe/releases/">Releases</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div> <!-- navigation -->
+
+        <!-- header-box -->
+        <div class="header-box-wrapper">
+            <div class="container container-double">
+                <div class="header-text pull-left">
+                    <h1 class="hidden-xs">NewPipe</h1>
+                    <br class="hidden-xs">
+                    <h3>The lightweight<br>YouTube experience<br>for Android</h3>
+                </div>
+                <div class="logo">
+                    <img src="{{ site.baseurl }}/img/logo.svg" class="img-circle border-white" alt="NewPipe logo" />
+                </div>
+                <div class="get-newpipe-wrapper">
+                    <a href="#download">
+                        <img src="{{ site.baseurl }}/img/Get_NewPipe_logo_large.svg" class="newpipe" alt="get NewPipe" />
+                    </a>
+                </div>
+                <div class="phone hidden-xs">
+                    <video id="animation" src="{{ site.baseurl }}/img/newpipe_promotion_video.mp4" preload='none' loop muted playsinline></video>
+                    <img src="{{ site.baseurl }}/img/nexus6.png" alt="NewPipe running on nexus6" />
+                </div>
+            </div>
+        </div> <!-- header-box -->
+
+    </div> <!-- header-wrapper -->
+
+    <!-- first text box -->
+    <div id="text-1">
+        <div class="container container-double">
+            <div id="text-1-wrapper">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p><strong>Do you like watching videos on YouTube but want an intuitive, feature-rich and privacy friendly app for that?</strong></p>
+                        <p class="text-justify-md"><span class="red">NewPipe</span> has been created with the purpose of getting the original YouTube experience on your smartphone without annoying ads and questionable permissions.</p>
+                        <p>The application is open source and you can check on it at <a href="https://github.com/TeamNewPipe/NewPipe/">GitHub</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- separator -->
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="visible-xs separator" />
+                </div>
+            </div>
+        </div>
+    </div> <!-- first text box -->
+
+
+    <!-- features -->
+    <div id="features">
+        <div class="container container-double">
+            <h3 id="features-title">Main Features</h3>
+        </div>
+        <div class="container container-double">
+            <div class="row is-flex">
+                <div class="col-md-9 feature-detail" id="lightweight">
+                    <h3 class="newpipe-title">NewPipe - the smart streaming solution</h3>
+                    <div class="feature-description">
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="single-chart">
+                                    <svg viewbox="0 0 36 36" class="circular-chart red">
+                                        <path class="circle-bg"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle in"
+                                              stroke-dasharray="80, 100"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                    </svg>
+                                    <span class="circle-text"><i class="fa fa-bolt"></i></span>
+                                </div>
+                                <p class="text-center">Fast</p>
+                            </div> <!-- fast -->
+
+                            <div class="col-sm-6">
+                                <div class="single-chart">
+                                    <svg viewbox="0 0 36 36" class="circular-chart red">
+                                        <path class="circle-bg"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle"
+                                              stroke-dasharray="87, 100"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                    </svg>
+                                    <span class="circle-text fa-mobile-wrapper"><i class="fa fa-mobile"></i></span>
+                                </div>
+                                <p class="text-center">Small</p>
+                            </div> <!-- size -->
+
+                            <div class="col-sm-6">
+                                <div class="single-chart">
+                                    <svg viewbox="0 0 36 36" class="circular-chart red">
+                                        <path class="circle-bg"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle"
+                                              stroke-dasharray="97, 100"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                    </svg>
+                                    <span class="circle-text"><i class="fa fa-battery"></i></span>
+                                </div>
+                                <p class="text-center">Battery Saving</p>
+                            </div> <!-- battery -->
+
+                            <div class="col-sm-6">
+                                <div class="single-chart">
+                                    <svg viewbox="0 0 36 36" class="circular-chart red">
+                                        <path class="circle-bg"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                        <path class="circle in"
+                                              stroke-dasharray="90, 100"
+                                              d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        />
+                                    </svg>
+                                    <span class="circle-text"><i class="fa fa-signal"></i></span>
+                                </div>
+                                <p class="text-center">Little Data Consumption</p>
+                            </div> <!-- data -->
+
+                        </div>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 feature-detail" id="downloads" >
+                    <h3>Downloads</h3>
+                    <div class="feature-media">
+                        <img src="/img/screenshots/shot_02.png" class="img-responsive active" alt="download functionality" />
+                        <!--<img src="/img/screenshots/shot_03.png" class="img-responsive" />-->
+                    </div>
+                    <div class="feature-description">
+                        <p><strong>Customize your download:</strong></p>
+                        <ul>
+                            <li>Set title</li>
+                            <li>Choose between video, audio or captions download</li>
+                            <li>Select the most suitable file format</li>
+                            <li>Download the resolution you need</li>
+                        </ul>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 feature-detail" id="privacy" >
+                    <h3>Extended Privacy</h3>
+                    <div class="feature-media">
+                        <img src="/img/privacy_written_in_tiles.jpg" class="img-responsive" alt="privacy spelled" />
+                    </div>
+                    <div class="feature-description">
+                        <p><strong>We protect your privacy</strong></p>
+                        <ul>
+                            <li>No proprietary Google APIs</li>
+                            <li>Only send information which are required to get video and channel details</li>
+                            <li>Decide what information we keep</li>
+                            <li>We store everything offline on your device</li>
+                        </ul>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 feature-detail" id="background" >
+                    <h3>Background Player</h3>
+                    <div class="feature-media">
+                        <img src="/img/screenshots/shot_06.png" class="img-responsive" alt="background playlist" />
+                    </div>
+                    <div class="feature-description">
+                        <p><strong>Listen to your favourite music while using other apps:</strong></p>
+                        <ul>
+                            <li>Play in background</li>
+                            <li class="text-success">Pro tip: close NewPipe to save RAM and battery</li>
+                            <li>Create playlists for an endless music experience</li>
+                            <li>Save mobile data volume (we only download the audio)</li>
+                        </ul>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 feature-detail" id="popup" >
+                    <h3>Popup Player</h3>
+                    <div class="feature-media">
+                        <img src="/img/screenshots/shot_05.png" class="img-responsive" alt="popup player in browser app" />
+                    </div>
+                    <div class="feature-description">
+                        <p><strong>Never stop playing!</strong></p>
+                        <ul>
+                            <li>View videos whenever you like</li>
+                            <li>Resize and move it wherever you like</li>
+                            <li>Use the full comfort of our normal video player</li>
+                            <li class="text-success">Pro tip: switch between all players with one click</li>
+                            <li>Available for all Android versions</li>
+                        </ul>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 feature-detail" id="subscriptions" >
+                    <h3>Subscriptions</h3>
+                    <div class="feature-media">
+                        <img src="/img/screenshots/shot_09.png" class="img-responsive" alt="subscriptions list" />
+                    </div>
+                    <div class="feature-description">
+                        <p><strong>Never miss updates again:</strong></p>
+                        <ul>
+                            <li>Subscribe to a channel with one click</li>
+                            <li>Use your custom feed</li>
+                            <li>Watch your favourite channels</li>
+                            <li>Easily import and export your local subscriptions from other devices</li>
+                        </ul>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 feature-detail" id="bookmarks">
+                    <h3>Bookmarks and Local Playlists</h3>
+                    <div class="feature-media">
+                        <img src="/img/screenshots/shot_14.png" class="img-responsive" alt="bookmark view" />
+                    </div>
+                    <div class="feature-description">
+                        <p><strong>Endless music</strong></p>
+                        <ul>
+                            <li>Create your own playlists</li>
+                            <li>Import playlists</li>
+                            <li>Mark your favourite videos</li>
+                            <li class="text-success">Import your data on other devices to save time</li>
+                        </ul>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 feature-detail" id="history">
+                    <h3>History</h3>
+                    <div class="feature-media">
+                        <img src="/img/screenshots/shot_history_last_played_dark.png" class="img-responsive" alt="watched history" />
+                    </div>
+                    <div class="feature-description">
+                        <p><strong>Go back in time</strong></p>
+                        <ul>
+                            <li>Watch your favourites again</li>
+                            <li>Search suggestions based on your last searches</li>
+                            <li>Easily open what you watch most</li>
+                            <li class="text-success">Control what we keep for you</li>
+                        </ul>
+                    </div>
+                    <div class="feature-close-detail">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-md-3" id="features-sidebar">
+                    <div class="list-group">
+                        <a href="#lightweight">
+                            <div class="list-group-item active">
+                                <span class="icon"><i class="fa fa-bolt"></i></span> Lightweight
+                            </div>
+                        </a>
+                        <a href="#downloads">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-download"></i></span> Downloads
+                            </div>
+                        </a>
+                        <a href="#privacy">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-lock"></i></span> Extended Privacy
+                            </div>
+                        </a>
+                        <a href="#background">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-volume-up"></i></span> Background Player
+                            </div>
+                        </a>
+                        <a href="#popup">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-window-maximize"></i></span> Popup Player
+                            </div>
+                        </a>
+                        <a href="#subscriptions">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-feed"></i></span> Subscriptions
+                            </div>
+                        </a>
+                        <a href="#bookmarks">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-bookmark"></i></span> Bookmarks
+                            </div>
+                        </a>
+                        <a href="#history">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-history"></i></span> History
+                            </div>
+                        </a>
+                        <!--<a href="#4k">
+                            <div class="list-group-item">
+                                <span class="icon"><i class="fa fa-podcast"></i></span> Live
+                            </div>
+                        </a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- features -->
+
+    <!-- tiles -->
+    <div class="tiles-container">
+        <div class="container container-double">
+            <div class="row is-flex">
+                
+                <div class="col-xs-12">
+                    <hr class="separator hidden visible-xs" />
+                </div>
+                
+                <div class="col-xs-12" id="services">
+                    <h3 class="title">Supported Services</h3>
+                    <div class="row is-flex">
+                        <div class="tile service-tile" id="service-youtube">
+                            <div class="service-title">YouTube</div>
+                            <div class="service-description">
+                                YouTube is one of the most popular video and live streaming platforms, including music, news, gaming and much more.
+                            </div>
+                            <a class="service-link" href="https://youtube.com">visit service website</a>
+                        </div>
+
+                        <div class="tile service-tile" id="service-peertube">
+                            <!--<div class="service-logo"><img src="/img/peertube-brand.png" alt="PeerTube" class="img-responsive"/></div>-->
+                            <div class="service-title">PeerTube</div>
+                            <div class="service-description">
+                                PeerTube is a decentralized video platform.<br>
+                                Any PeerTube instance can be added to NewPipe.
+                            </div>
+                            <a class="service-link" href="https://joinpeertube.org">visit service website</a>
+                        </div>
+
+                        <div class="tile service-tile" id="service-soundcloud">
+                            <div class="service-title">SoundCloud</div>
+                            <div class="service-description">
+                                SoundCloud is a streaming platform for music.
+                            </div>
+                            <a class="service-link" href="https://soundcloud.com">visit service website</a>
+                        </div>
+
+                        <div class="tile service-tile" id="service-bandcamp">
+                            <!--<div class="service-logo"></div>-->
+                            <div class="service-title">Bandcamp</div>
+                            <div class="service-description">
+                                Bandcamp is an artist-friendly platform for sharing music.<br>
+                                It offers user-friendly DRM-free downloads.
+                            </div>
+                            <a class="service-link" href="https://bandcamp.com">visit service website</a>
+                        </div>
+
+                        <div class="tile service-tile" id="service-mediacccde">
+                            <div class="service-title">media.ccc.de</div>
+                            <div class="service-description">
+                                media.ccc.de is the video archive and live streaming platform of the German hacker and information security activist group <a href="https://ccc.de">Chaos Computer Club</a>.
+                            </div>
+                            <a class="service-link" href="https://media.ccc.de/">visit service website</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-xs-12 text-center" style="margin-top: 15px">
+                            <div class="button action" style="background-color: green">And more to come!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <hr class="separator hidden-md" />
+                </div>
+
+                <!-- User Voices -->
+                <div class="col-xs-12 tile" id="user-voices">
+                    <h3>What other people think</h3>
+                    <div id="user-voices-carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active"> <!-- @Bubu -->
+                                <div class="user-thumbnail">
+                                    <a href="https://github.com/TeamNewPipe/NewPipe/issues/1153#issuecomment-375478646">
+                                        <img src="{{ site.baseurl }}/img/bubu_thumbnail.jpg" class="img-responsive img-circle" alt="Marcus Hoffman thumbnail" />
+                                    </a>
+                                </div>
+                                <p class="user-name">
+                                    <a href="https://github.com/TeamNewPipe/NewPipe/issues/1153#issuecomment-375478646">
+                                        Marcus Hoffmann
+                                    </a>
+                                </p>
+                                <p class="user-statement">one of the most used apps on my Phone</p>
+                            </div>
+                            <div class="item">
+                                <div class="user-thumbnail">
+                                    <i class="fa fa-user-circle-o"></i>
+                                </div>
+                                <p class="user-name">
+                                    <a href="{{ site.url }}/blog/pinned/NewPipe-needs-feedback/#isso-12">
+                                        Neil Simpson
+                                    </a>
+                                </p>
+                                <p class="user-statement">Such a great app - it is probably the app I use most on my phone!</p>
+                            </div>
+                            <div class="item">
+                                <div class="user-thumbnail">
+                                    <i class="fa fa-user-circle-o"></i>
+                                </div>
+                                <p class="user-name">
+                                    <a href="{{ site.url }}/blog/pinned/NewPipe-needs-feedback/#isso-8">
+                                        Sarah Ann Berger
+                                    </a>
+                                </p>
+                                <p class="user-statement">You really do have a quality app, which is a rarity. </p>
+                            </div>
+                            <div class="item">
+                                <div class="user-thumbnail">
+                                    <i class="fa fa-user-circle-o"></i>
+                                </div>
+                                <p class="user-name">
+                                    <a href="{{ site.url }}/blog/pinned/NewPipe-needs-feedback/#isso-16">
+                                        Arthur Reeder
+                                    </a>
+                                </p>
+                                <p class="user-statement">NewPipe is one of the best applications on mobile today.</p>
+                            </div>
+                        </div>
+
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#user-voices-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#user-voices-carousel" data-slide-to="1"></li>
+                            <li data-target="#user-voices-carousel" data-slide-to="2"></li>
+                            <li data-target="#user-voices-carousel" data-slide-to="3"></li>
+                        </ol>
+
+                        <!-- Controls: not displayed but needed to get preventJumpingPage() working
+                             Pausing the Carousel won't work without controls. Don't ask me why :)
+                         -->
+                        <a class="left carousel-control" href="#user-voices-carousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#user-voices-carousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Download -->
+                <div class="col-xs-12" id="download">
+                    <h3 class="title">Get NewPipe</h3>
+                </div>
+
+                <div class="col-xs-12 tile tile-bordered" id="download1">
+                    <div class="row is-flex">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="download-version-container">
+                                <div class="download-version-icon">
+                                    <img src="img/logo_app.svg" class="img-responsive" alt="NewPipe icon" />
+                                </div>
+                                <div class="download-version-requirements">
+                                    Android 4.4+
+                                </div>
+                                <div class="download-version-button">
+                                    <a href="https://f-droid.org/packages/org.schabi.newpipe/#latest" data-newpipe-api="flavors.github.stable.apk" data-newpipe-api-attribute="href" class="button action">
+                                        <i class="fa fa-download"></i> NewPipe <span data-newpipe-api="flavors.github.stable.version"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="download-version-container">
+                                <div class="download-version-icon">
+                                    <img src="img/icon_legacy.svg" class="img-responsive" alt="NewPipe legacy icon" />
+                                </div>
+                                <div class="download-version-requirements">
+                                    Android 4.1+
+                                </div>
+                                <div class="download-version-button">
+                                    <a href="https://f-droid.org/packages/org.schabi.newpipelegacy/#latest" data-newpipe-api="flavors.fdroid_legacy.stable.apk" data-newpipe-api-attribute="href" class="button action">
+                                        <i class="fa fa-download"></i> NewPipe legacy <span data-newpipe-api="flavors.fdroid_legacy.stable.version"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8">
+                            <div id="download-info-carousel-container">
+                                <div id="f-droid-carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <p><a href="https://f-droid.org/"><img src="img/fdroid-logo.svg" class="img-responsive fdroid-logo" alt="F-Droid logo" /> F-Droid</a> is a trusted catalogue of Free and Open Source applications for Android.</p>
+                                            <p>Install the F-Droid app to get notified about updates. It enables you to download and update them too.</p>
+											<div>
+											<p>If you install NewPipe via the default F-Droid repo, updates for NewPipe might take their time to arrive for you. If you want to use our own repository, check out the next item in this slideshow.</p>
+                                            <a href="https://f-droid.org/packages/org.schabi.newpipe/" target="_blank">
+											<img src="/img/f-droid.svg" class="f-droid" alt="get it on F-Droid"></a>
+											</div>
+                                            <p><a href=" https://f-droid.org/en/about/#terms-etc">F-Droid respects your privacy. They don’t track you, or your device.</a><br />
+                                                We would like to thank them for providing their services in this way.
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <div class="row is-flex">
+                                                <div class="col-md-5 col-lg-4" id="download-newpipe-qr-code-container-col">
+                                                    <div id="download-newpipe-qr-code-container">
+                                                        <a href="https://archive.newpipe.net/fdroid/repo/?fingerprint=E2402C78F9B97C6C89E97DB914A2751FDA1D02FE2039CC0897A462BDB57E7501">
+                                                            <img src="/img/fdroid-repo-qrcode.svg" class="img-responsive fdroid-repo-qrcode" alt="Link to our F-Droid repo" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 col-lg-8">
+                                                    <div class="fdroid-col-right">
+                                                        <p>You can also add our F-Droid repository to your client to receive updates even faster.</p>
+                                                        <p><a class="break-line" href="https://archive.newpipe.net/fdroid/repo/?fingerprint=E2402C78F9B97C6C89E97DB914A2751FDA1D02FE2039CC0897A462BDB57E7501">https://archive.newpipe.net/fdroid/repo/?fingerprint=E2402C78F9B97C6C89E97DB914A2751FDA1D02FE2039CC0897A462BDB57E7501</a></p>
+                                                        <div class="hidden-md hidden-lg">
+                                                            <p id="f-droid-qr-code-toggle" class="text-center"><i class="fa fa-chevron-right"></i> <span class="f-droid-qr-code-toggled shown">Show</span><span class="f-droid-qr-code-toggled hidden">Hide</span> QR-code</p>
+                                                            <p class="text-center">
+                                                                <a id="f-droid-repo-qr-code" href="https://archive.newpipe.net/fdroid/repo/?fingerprint=E2402C78F9B97C6C89E97DB914A2751FDA1D02FE2039CC0897A462BDB57E7501" class="hidden f-droid-qr-code-toggled">
+                                                                    <img src="https://f-droid.org/assets/download-fdroid-qr.png" class="img-responsive" alt="URL to our F-Droid repo"/>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                        <p class="text-center text-left-md"><a class="button button-small action grey" href="{{ site.baseurl }}/FAQ/tutorials/install-add-fdroid-repo/">Learn more</a></p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#f-droid-carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#f-droid-carousel" data-slide-to="1"></li>
+                                    </ol>
+
+                                    <!-- Controls: not displayed but needed to get preventJumpingPage() working
+                                         Pausing the Carousel won't work without controls. Don't ask me why :)
+                                     -->
+                                    <a class="left carousel-control" href="#f-droid-carousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#f-droid-carousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <div class="download-info-container">
+                                <div class="download-info-heading">
+                                    <h4>Release Highlights</h4>
+                                </div>
+                                <div class="download-info-content">
+                                    <div id="download-info-changelog">
+                                        {{ releaseChangelog }}
+                                        {%- if releasePostUrl and releasePostUrl != empty %}
+                                        <p class="text-center"><a href="{{ releasePostUrl }}" class="button button-small action grey">Blog post</a></p>
+                                        {%- endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <div class="download-info-container">
+                                <div class="download-info-heading">
+                                    <h4>Need help?</h4>
+                                </div>
+                                <div class="download-info-content">
+                                    <div id="download-info-help">
+                                        <ul>
+                                            <li>Did you enable unknown sources?</li>
+                                            <li>Do you have problems updating?</li>
+                                        </ul>
+                                        <p class="text-center">
+                                            <!--<a href="#" class="button button-small action grey">Read more</a>-->
+                                            <a href="{{ site.baseurl }}/FAQ/install/" class="button button-small action grey">First steps</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- disabled until we have enough tutorials and FAQs
+                <div class="col-xs-12">
+                    <h3 class="title">Get Started</h3>
+                </div>
+
+                <div class="col-xs-12 tile tile-bordered" id="get-started">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h4>Try our tutorials and read the FAQ</h4>
+                        </div>
+                    </div>
+                    <div class="row is-flex">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="content">
+                                Set up NewPipe to work best with your conditions.
+                            </div>
+                        </div>
+                        <a class="col-xs-12 col-md-4" href="#"><i class="fa fa-caret-right"></i> First steps</a>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="content">
+                                Are you low on mobile data and have no WiFi?<br>We show you how to save data with NewPipe
+                            </div>
+                        </div>
+                        <a class="col-xs-12 col-md-4" href="#"><i class="fa fa-caret-right"></i> Save Data</a>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="content">
+                                NewPipe has a bunch of hidden features.<br>Don't believe us?<br>Check it out!
+                            </div>
+                        </div>
+                        <a class="col-xs-12 col-md-4" href="#"><i class="fa fa-caret-right"></i> Learn more</a>
+                    </div>
+                    <div class="row text-center border-none">
+                        <a class="col-xs-6" href="#">
+                            <i class="fa fa-chevron-right"></i> Tutorials
+                        </a>
+                        <a class="col-xs-6" href="#">
+                            <i class="fa fa-chevron-right"></i> FAQ
+                        </a>
+                    </div>
+                </div>
+                -->
+
+                <!-- Open Source -->
+                <div class="col-xs-12">
+                    <hr class="separator" />
+                </div>
+
+                <div class="col-xs-12 tile" id="tile-opensource">
+                    <div class="tile-media">
+                        <a href="https://github.com/TeamNewPipe/NewPipe">
+                            <img src="/img/newpipe_on_github.svg" class="img-responsive" alt="NewPipe on GitHub" />
+                        </a>
+                    </div>
+                    <div class="tile-description">
+                        <h4>NewPipe is free and open source</h4>
+
+                        <p><strong>Your advantages</strong></p>
+                        <ul class="check">
+                            <li>Quick help when you have a problem (nobody's ever had one)</li>
+                            <li>Dozens of people bring NewPipe forward and translate it into <a href="https://hosted.weblate.org/engage/NewPipe/"><span data-newpipe-api="stats.translations">60+</span>&nbsp;languages</a>.</li>
+                            <li>You can check the source code on <a href="https://github.com/TeamNewPipe/NewPipe">GitHub</a> and contribute to NewPipe.</li>
+                            <li>NewPipe is covered by the <a href="https://github.com/TeamNewPipe/NewPipe/blob/master/LICENSE">GPL&nbsp;3.0&nbsp;license</a>.</li>
+                            <li>Get NewPipe from <a href="https://f-droid.org/packages/org.schabi.newpipe/">F-Droid</a> and discover more FOSS apps.</li>
+                            <li class="text-success">NewPipe is available for free</li>
+                        </ul>
+                        <p class="button-wrapper">
+                            <a href="https://github.com/TeamNewPipe/NewPipe/blob/dev/.github/CONTRIBUTING.md#newpipe-contribution-guidelines" class="button action">Contribute</a>
+                            <a href="https://github.com/TeamNewPipe/NewPipe/" class="button action"><i class="fa fa-star"></i> <span data-newpipe-api="stats.stargazers">10k</span></a>
+                            <a href="https://hosted.weblate.org/engage/NewPipe/" class="button action">Translate</a>
+                            <a href="https://github.com/TeamNewPipe/website/" class="button action grey" >Improve this site</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- Support -->
+
+                <div class="col-xs-12">
+                    <h3 class="title">Support NewPipe</h3>
+                </div>
+                <div class="col-md-6 tile tile-left" id="tile-free">
+                    <h4>Why NewPipe is free</h4>
+                    <ul class="check">
+                        <li class="heart">We love what we are doing</li>
+                        <li>NewPipe is powered by a growing community</li>
+                        <li>Our goal is to make the internet a more free (libre) place and open it for everyone</li>
+                        <li>Your donations cover a majority of our costs</li>
+                        <li class="text-success">F-Droid, Weblate, Sentry and other companies offer their services to open source projects for free</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 tile tile-right" id="tile-like-np">
+                    <h4>Like the idea?</h4>
+                    <p>We hope so! But don't forget, a lot of time and energy goes into this, and we share it with you.</p>
+                    <p>We offer you ways to support our work by donations - so we can get some <strong class="red">extra snacks during work!</strong></p>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- tiles -->
+
+
+    <!-- donate -->
+    <div id="donate">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Bring NewPipe forward</h3>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p><a href="{{ site.baseurl }}/donate/" class="button button-large action">Donate</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Support our developers</h3>
+                </div>
+            </div>
+        </div>
+    </div> <!-- donate -->
+
+    {% include footer.html buffer=False %}
+
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ site.baseurl }}/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Script for parallax animations -->
+    <script async src="{{ site.baseurl }}/js/parallax.js"></script>
+
+    <!-- Script for feature animations -->
+    <script async src="{{ site.baseurl }}/js/features.js"></script>
+
+    <script defer src="{{ site.baseurl }}/js/tiles.js"></script>
+
+    <script defer src="{{ site.baseurl }}/js/web-api.js"></script>
+
+    <script src="{{ site.baseurl }}/js/swipe.js"></script>
+
+    <!-- Script to handle touch and swipe events on carousels-->
+    <!-- Load and play animation on medium and large screens -->
+    <script src="{{ site.baseurl }}/js/index.js"></script>
+
+</body>
+</html>
